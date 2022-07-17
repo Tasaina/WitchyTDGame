@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float speed;
+    public float health;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        transform.position += new Vector3(speed*Time.deltaTime, 0);
     }
 }
