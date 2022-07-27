@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public Vector3 turretPosition;
-    private Vector3 targetPosition;
+    private Turret turret;
+    private Transform target;
     public float speed;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Setup(Turret turret, Transform target)
     {
-        
+        this.turret = turret;
+        this.target = target;
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         
     }
