@@ -8,6 +8,7 @@ public class Turret : MonoBehaviour
     public Bullet bulletPrefab;
     public float attackRange;
     public TurretRangeIndicator rangeIndicator;
+    public List<Enemy> enemies = new List<Enemy>();
     
     void Start()
     {
@@ -21,11 +22,17 @@ public class Turret : MonoBehaviour
 
     private void AddTarget(Collider2D collider)
     {
+        var enemy = collider.gameObject.GetComponent<Enemy>();
+        if (enemy == null) return;
 
+        enemies.Add(enemy);
     }
     private void RemoveTarget(Collider2D collider)
     {
+        var enemy = collider.gameObject.GetComponent<Enemy>();//check out later//
+        if (enemy == null) return;
 
+        enemies.Remove(enemy);
     }
    
 }
