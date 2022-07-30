@@ -171,7 +171,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: -405818534539242319, guid: 2257e723398d5694eb05f74bd07ff850, type: 3}
   attackRange: 0
+  baseAttackDelay: 1
   rangeIndicator: {fileID: 7795363631463254252}
+  enemies: []
 --- !u!212 &5302221092550710961
 SpriteRenderer:
   m_ObjectHideFlags: 0
