@@ -10,5 +10,11 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         transform.position += new Vector3(speed*Time.deltaTime, 0);
+        if (health<=0) Destroy(gameObject);
+    }
+
+    public void GetHit(HitEffects effects)
+    {
+        health -= effects.Damage;
     }
 }

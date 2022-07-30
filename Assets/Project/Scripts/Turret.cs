@@ -5,18 +5,22 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
+    private float attackDelay;
+    
     public Bullet bulletPrefab;
     public float attackRange;
     public float baseAttackDelay;
-    private float attackDelay;
+    public float damage;
     public TurretRangeIndicator rangeIndicator;
     public List<Enemy> enemies = new List<Enemy>();
-    
+
     void Start()
     {
+        rangeIndicator.transform.localScale *= attackRange;
         rangeIndicator.Enter.AddListener(AddTarget); 
         rangeIndicator.Exit.AddListener(RemoveTarget);
     }
+
     private void Update()
     {
         attackDelay -= Time.deltaTime;
@@ -25,6 +29,7 @@ public class Turret : MonoBehaviour
         if (enemies.Count != 0)
         {
             var bullet = Instantiate(bulletPrefab);
+            bullet.Setup(this, enemies[0].transform);
             bullet.transform.position = transform.position;
             attackDelay = baseAttackDelay;
         }
@@ -39,8 +44,7 @@ public class Turret : MonoBehaviour
     }
     private void RemoveTarget(Collider2D collider)
     {
-        var enemy = collider.gameObject.GetComponent<Enemy>();//check out later//
-        if (enemy == null) return;
+        var enemy = collider.gameObject.GetComponent<Enemy>();
 
         enemies.Remove(enemy);
     }

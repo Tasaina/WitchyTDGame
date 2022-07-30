@@ -130,6 +130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8192101348685305383, guid: d924605c269b62e4aa34c348bf27358b, type: 3}
+      propertyPath: damage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8192101348685305383, guid: d924605c269b62e4aa34c348bf27358b, type: 3}
+      propertyPath: baseAttackDelay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4366786120055621660, guid: d924605c269b62e4aa34c348bf27358b, type: 3}
       propertyPath: m_Name
       value: BaseTurret
@@ -140,11 +148,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9005824035497886477, guid: d924605c269b62e4aa34c348bf27358b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.59
+      value: -5.54
       objectReference: {fileID: 0}
     - target: {fileID: 9005824035497886477, guid: d924605c269b62e4aa34c348bf27358b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.45
+      value: -2.29
       objectReference: {fileID: 0}
     - target: {fileID: 9005824035497886477, guid: d924605c269b62e4aa34c348bf27358b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -244,6 +252,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8192101348685305383, guid: d924605c269b62e4aa34c348bf27358b, type: 3}
+      propertyPath: attackRange
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4366786120055621660, guid: d924605c269b62e4aa34c348bf27358b, type: 3}
       propertyPath: m_Name
       value: BaseTurret (2)
@@ -254,11 +266,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9005824035497886477, guid: d924605c269b62e4aa34c348bf27358b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.54
+      value: 5.78
       objectReference: {fileID: 0}
     - target: {fileID: 9005824035497886477, guid: d924605c269b62e4aa34c348bf27358b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.15
+      value: -1.51
       objectReference: {fileID: 0}
     - target: {fileID: 9005824035497886477, guid: d924605c269b62e4aa34c348bf27358b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -564,6 +576,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8192101348685305383, guid: d924605c269b62e4aa34c348bf27358b, type: 3}
+      propertyPath: attackRange
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4366786120055621660, guid: d924605c269b62e4aa34c348bf27358b, type: 3}
       propertyPath: m_Name
       value: BaseTurret (1)
@@ -574,11 +590,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9005824035497886477, guid: d924605c269b62e4aa34c348bf27358b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 9005824035497886477, guid: d924605c269b62e4aa34c348bf27358b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.43
+      value: 3.09
       objectReference: {fileID: 0}
     - target: {fileID: 9005824035497886477, guid: d924605c269b62e4aa34c348bf27358b, type: 3}
       propertyPath: m_LocalPosition.z
