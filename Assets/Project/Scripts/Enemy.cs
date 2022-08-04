@@ -1,11 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Enemy : MonoBehaviour
 {
     public float speed;
     public float health;
+    private List<EnemyGoal> activeGoals = new List<EnemyGoal>();
+    private EnemyGoal goal;
+
+    private void Start()
+    {
+        activeGoals = GameManager.Instance.LevelManager.goals; 
+        SetNewGoal();
+    }
 
     void Update()
     {
@@ -13,8 +22,22 @@ public class Enemy : MonoBehaviour
         if (health<=0) Destroy(gameObject);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        var hitGoal = collision.GetComponent<EnemyGoal>();
+        if (hitGoal == null) return;
+
+        activeGoals.Remove(hitGoal);
+        SetNewGoal();
+    }
+
     public void GetHit(HitEffects effects)
     {
         health -= effects.Damage;
+    }
+
+    private void SetNewGoal()
+    {
+        goal = activeGoals.OrderBy(g => Vector3.Distance(transform.position, g.transform.position)).First();
     }
 }
