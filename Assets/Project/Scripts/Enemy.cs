@@ -12,13 +12,14 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        activeGoals = GameManager.Instance.LevelManager.goals; 
+        activeGoals = GameManager.Instance.LevelManager.goals.ToList();
         SetNewGoal();
     }
 
     void Update()
     {
-        transform.position += new Vector3(speed*Time.deltaTime, 0);
+        transform.position = Vector2.MoveTowards(transform.position, goal.transform.position, speed * Time.deltaTime);
+        //transform.position += new Vector3(speed*Time.deltaTime, 0);
         if (health<=0) Destroy(gameObject);
     }
 
