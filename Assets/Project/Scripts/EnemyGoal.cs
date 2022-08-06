@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class EnemyGoal : MonoBehaviour
 {
+
+    public bool IsFinal => _isFinal;
+
     [SerializeField]
-    private bool IsFinal;
-    
+    private bool _isFinal;
     void Start()
     {
         

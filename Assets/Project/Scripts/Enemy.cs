@@ -28,6 +28,11 @@ public class Enemy : MonoBehaviour
         var hitGoal = collision.GetComponent<EnemyGoal>();
         if (hitGoal == null) return;
 
+        if (hitGoal.IsFinal)
+        {
+            GameManager.Instance.RunManager.TakeDamage(1);
+            Destroy(gameObject);
+        }
         activeGoals.Remove(hitGoal);
         SetNewGoal();
     }

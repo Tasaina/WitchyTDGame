@@ -58,6 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f0fd97c033a7714a95f1d221a921df1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goals: []
 --- !u!114 &5785705515867815702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,3 +71,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156934f0514c08647aeaf8bbfa67b426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 3
