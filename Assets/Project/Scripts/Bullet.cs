@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour
         this.turret = turret;
         this.target = target;
     }
+
     private void Update()
     {
         if (target==null) Destroy(gameObject);
