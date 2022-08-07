@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class LevelUI : MonoBehaviour
 {
     public Turret turretToSpawn;
-    public TurretPlaceholder turretPlaceholderPrefab;
 
     void Start()
     {
@@ -16,7 +15,6 @@ public class LevelUI : MonoBehaviour
 
     private void SpawnTowerClicked()
     {
-        var turretPlaceholder = Instantiate(turretPlaceholderPrefab);
-        turretPlaceholder.Setup(turretToSpawn);
+        GameManager.Instance.LevelManager.SpawnPlaceholder(turretToSpawn);
     }
 }

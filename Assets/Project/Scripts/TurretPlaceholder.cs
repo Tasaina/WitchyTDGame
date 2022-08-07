@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TurretPlaceholder : MonoBehaviour
 {
-    private Turret turret;
+    public Turret turret;
 
     public void Setup(Turret turretToPlacehold)
     {
@@ -16,5 +16,7 @@ public class TurretPlaceholder : MonoBehaviour
         var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         var newPosition = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
         transform.position = newPosition;
+        if (Input.GetMouseButtonDown(0)) GameManager.Instance.LevelManager.SpawnTurret();
+        if (Input.GetMouseButtonDown(1)) GameManager.Instance.LevelManager.DropPlaceholder();
     }
 }

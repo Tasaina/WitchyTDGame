@@ -37,6 +37,7 @@ public class Turret : MonoBehaviour
 
     private void AddTarget(Collider2D collider)
     {
+        Console.WriteLine("ADD TARGET CALLED");
         var enemy = collider.gameObject.GetComponent<Enemy>();
         if (enemy == null) return;
 

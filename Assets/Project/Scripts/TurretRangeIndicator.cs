@@ -10,7 +10,6 @@ public class TurretRangeIndicator : MonoBehaviour
     public UnityEvent<Collider2D> Exit;
     void Start()
     {
-        Enter = new UnityEvent<Collider2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
