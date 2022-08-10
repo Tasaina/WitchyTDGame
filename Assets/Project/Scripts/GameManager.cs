@@ -7,8 +7,9 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get { return _instance; } }
     private static GameManager _instance;
 
-    public RunManager RunManager { get; set; }
-    public LevelManager LevelManager { get; set; }
+    public RunManager RunManager { get; private set; }
+    public LevelManager LevelManager { get; private set; }
+    public WaveManager WaveManager { get; private set; }
 
     void Awake()
     {
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
         _instance = this;
         RunManager = GetComponent<RunManager>();
         LevelManager = GetComponent<LevelManager>();
+        WaveManager = GetComponent<WaveManager>();
         DontDestroyOnLoad(gameObject);
     }
 }

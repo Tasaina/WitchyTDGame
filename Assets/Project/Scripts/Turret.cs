@@ -6,7 +6,6 @@ using UnityEngine;
 public class Turret : MonoBehaviour
 {
     private float attackDelay;
-    
     public Bullet bulletPrefab;
     public float attackRange;
     public float baseAttackDelay;
