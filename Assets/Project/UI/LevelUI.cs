@@ -15,6 +15,6 @@ public class LevelUI : MonoBehaviour
 
     private void SpawnTowerClicked()
     {
-        GameManager.Instance.LevelManager.SpawnPlaceholder(turretToSpawn);
+        GameManager.Instance.TurretManager.SpawnPlaceholder(turretToSpawn);
     }
 }

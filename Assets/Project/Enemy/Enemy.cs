@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        activeGoals = GameManager.Instance.LevelManager.goals.ToList();
+        activeGoals = FindObjectOfType<EnemyGoalHandler>().goals.ToList();
         SetNewGoal();
     }
 
@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
 
         if (hitGoal.IsFinal)
         {
-            GameManager.Instance.RunManager.TakeDamage(1);
+            GameManager.Instance.LevelManager.TakeDamage(1);
             Destroy(gameObject);
         }
         activeGoals.Remove(hitGoal);

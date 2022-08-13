@@ -6,40 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    public List<EnemyGoal> goals;
-    private TurretPlaceholder currentPlaceholder;
-    public TurretPlaceholder turretPlaceholderPrefab;
+    private int currentHealth;
 
+    [SerializeField]
+    private int maxHealth;
     void Start()
     {
-        SceneManager.sceneLoaded += LoadEnemyGoals;
+        currentHealth = maxHealth;
     }
 
-    //TODO move to local object in level? Enemy grabs that gameobject on spawn?
-    private void LoadEnemyGoals(Scene scene, LoadSceneMode mode)
+    public void TakeDamage(int damage)
     {
-        goals = FindObjectsOfType<EnemyGoal>().ToList();
-    }
-
-    //TODO Move into turretmanager
-    public void SpawnPlaceholder(Turret turretToSpawn)
-    {
-        if (currentPlaceholder != null) return;
-        currentPlaceholder = Instantiate(turretPlaceholderPrefab);
-        currentPlaceholder.Setup(turretToSpawn);
-    }
-
-    public void SpawnTurret()
-    {
-        if (currentPlaceholder == null) return;
-        var turret = Instantiate(currentPlaceholder.turret);
-        turret.transform.position = currentPlaceholder.transform.position;
-        DropPlaceholder();
-    }
-
-    public void DropPlaceholder()
-    {
-        Destroy(currentPlaceholder.gameObject);
-        currentPlaceholder = null;
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+        {
+            SceneManager.LoadScene("MainMenuScene");
+        }
     }
 }
