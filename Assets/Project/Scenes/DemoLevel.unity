@@ -678,6 +678,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1284560119611981832, guid: 6ee2d2c155b2adc43b49677fa1fcc6ab, type: 3}
+      propertyPath: waves.Array.data[0].baseSpawnDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1284560119611981832, guid: 6ee2d2c155b2adc43b49677fa1fcc6ab, type: 3}
       propertyPath: waves.Array.data[0].potentialEnemies.Array.size
       value: 1
       objectReference: {fileID: 0}

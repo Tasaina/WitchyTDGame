@@ -1,42 +1,60 @@
 using Assets.Project.Scripts;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using URandom = UnityEngine.Random;
 
 public class EnemySpawnpoint : MonoBehaviour
 {
     [SerializeField]
     public List<WaveInformation> waves = new List<WaveInformation>();
     
-    [NonSerialized]
-    public int enemiesLeftInWave;
+    public int enemiesLeftInWave=>currentWaveInformation.spawnsLeft;
     [NonSerialized]
     public int currentEnemy;
 
-    private int spawnDelay;
+    private float spawnDelay;
     private WaveInformation currentWaveInformation;
     private WaveManager waveManager;
     private bool active;
 
-    private void Start()
+    private void Awake()
     {
         waveManager = GameManager.Instance.WaveManager;
     }
 
     void Update()
     {
-        // spon aynemees
+        if (!active) return;
+        spawnDelay -= Time.deltaTime;
+        if (spawnDelay <= 0)
+        {
+            //REFACTOR
+            if (currentWaveInformation.spawnsLeft == 0)
+            {
+                active = false;
+                return;
+            }
+            SpawnEnemy();
+        }
     }
 
     public void WaveStart()
     {
         currentWaveInformation = waves.FirstOrDefault(w => waveManager.currentWave >= w.fromWave && waveManager.currentWave <= w.toWave);
+        currentWaveInformation.spawnsLeft = currentWaveInformation.totalSpawns;
         active = currentWaveInformation != null;
     }
 
-    private void SpawnEnemy() { 
-    
+    private void SpawnEnemy() {
+        var enemies = currentWaveInformation.potentialEnemies;
+        var enemyToSpawn = enemies[URandom.Range(0, enemies.Count)];
+        var enemy = Instantiate(enemyToSpawn, transform);
+
+        currentEnemy++;
+        currentWaveInformation.spawnsLeft--;
+
+        spawnDelay = currentWaveInformation.baseSpawnDelay;
     }
 }
