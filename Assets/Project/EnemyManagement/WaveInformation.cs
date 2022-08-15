@@ -16,5 +16,6 @@ namespace Assets.Project.Scripts
         [NonSerialized]
         public int spawnsLeft;
         public int baseSpawnDelay = 1;
+        public int pathId;
     }
 }

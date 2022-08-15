@@ -2,18 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 
 public class Enemy : MonoBehaviour
 {
     public float speed;
     public float health;
-    private List<EnemyGoal> activeGoals = new List<EnemyGoal>();
+    private int pathId;
+    public List<EnemyGoal> activeGoals = new List<EnemyGoal>();
     private EnemyGoal goal;
 
     private void Start()
     {
-        activeGoals = FindObjectOfType<EnemyGoalHandler>().goals.ToList();
-        SetNewGoal();
+       
+    }
+
+    public void Setup(int pathId)
+    {
+        this.pathId = pathId;
+        activeGoals = FindObjectOfType<EnemyGoalHandler>().goals.Where(g => g.pathId == pathId || g.pathId == 0).ToList();
+        SetNewGoal(FindNextGoal());
     }
 
     void Update()
@@ -27,22 +35,40 @@ public class Enemy : MonoBehaviour
         var hitGoal = collision.GetComponent<EnemyGoal>();
         if (hitGoal == null) return;
 
+        HitGoal(hitGoal);
+    }
+
+    private void HitGoal(EnemyGoal hitGoal)
+    {
         if (hitGoal.IsFinal)
         {
             GameManager.Instance.LevelManager.TakeDamage(1);
             Destroy(gameObject);
         }
-        activeGoals.Remove(hitGoal);
-        SetNewGoal();
+        if (hitGoal.forcedNextGoal!=null)
+        {
+            SetNewGoal(hitGoal.forcedNextGoal);
+            return;
+        } 
+        SetNewGoal(FindNextGoal());
     }
+
+    public EnemyGoal FindNextGoal()
+    {
+        return activeGoals.OrderBy(g => Vector3.Distance(transform.position, g.transform.position)).First();
+    }
+
+    private void SetNewGoal(EnemyGoal newGoal)
+    {
+        goal = newGoal;
+        activeGoals.Remove(newGoal);
+    }
+
+
 
     public void GetHit(HitEffects effects)
     {
         health -= effects.Damage;
     }
 
-    private void SetNewGoal()
-    {
-        goal = activeGoals.OrderBy(g => Vector3.Distance(transform.position, g.transform.position)).First();
-    }
 }

@@ -10,7 +10,8 @@ public class EnemySpawnpoint : MonoBehaviour
     [SerializeField]
     public List<WaveInformation> waves = new List<WaveInformation>();
     
-    public int enemiesLeftInWave=>currentWaveInformation.spawnsLeft;
+    public int enemiesLeftInWave => currentWaveInformation.spawnsLeft;
+
     [NonSerialized]
     public int currentEnemy;
 
@@ -18,7 +19,6 @@ public class EnemySpawnpoint : MonoBehaviour
     private WaveInformation currentWaveInformation;
     private WaveManager waveManager;
     private bool active;
-
     private void Awake()
     {
         waveManager = GameManager.Instance.WaveManager;
@@ -51,6 +51,7 @@ public class EnemySpawnpoint : MonoBehaviour
         var enemies = currentWaveInformation.potentialEnemies;
         var enemyToSpawn = enemies[URandom.Range(0, enemies.Count)];
         var enemy = Instantiate(enemyToSpawn, transform);
+        enemy.Setup(currentWaveInformation.pathId);
 
         currentEnemy++;
         currentWaveInformation.spawnsLeft--;
