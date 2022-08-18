@@ -49,6 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   health: 1
+  essenceDrop: 5
+  activeGoals: []
 --- !u!212 &6683468770225441017
 SpriteRenderer:
   m_ObjectHideFlags: 0

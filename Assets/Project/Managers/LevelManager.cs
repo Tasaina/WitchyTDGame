@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    public int essence;
     private int currentHealth;
 
     [SerializeField]
@@ -22,5 +24,10 @@ public class LevelManager : MonoBehaviour
         {
             SceneManager.LoadScene("MainMenuScene");
         }
+    }
+
+    public void GainEssence(int essenceGain)
+    {
+        essence += essenceGain;
     }
 }

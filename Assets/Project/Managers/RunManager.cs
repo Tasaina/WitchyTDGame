@@ -5,7 +5,5 @@ using UnityEngine.SceneManagement;
 
 public class RunManager : MonoBehaviour
 {
-
-
-
+    public int candy; // overarching (in-world) currency
 }

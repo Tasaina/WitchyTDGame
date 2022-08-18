@@ -8,18 +8,17 @@ public class Enemy : MonoBehaviour
 {
     public float speed;
     public float health;
-    private int pathId;
+    public int essenceDrop;
     public List<EnemyGoal> activeGoals = new List<EnemyGoal>();
     private EnemyGoal goal;
-
+    private LevelManager levelManager;
     private void Start()
     {
-       
+       levelManager = GameManager.Instance.LevelManager;
     }
 
     public void Setup(int pathId)
     {
-        this.pathId = pathId;
         activeGoals = FindObjectOfType<EnemyGoalHandler>().goals.Where(g => g.pathId == pathId || g.pathId == 0).ToList();
         SetNewGoal(FindNextGoal());
     }
@@ -27,7 +26,11 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, goal.transform.position, speed * Time.deltaTime);
-        if (health<=0) Destroy(gameObject);
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+            levelManager.GainEssence(essenceDrop);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

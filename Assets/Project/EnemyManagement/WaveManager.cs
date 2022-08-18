@@ -23,7 +23,7 @@ public class WaveManager : MonoBehaviour
 
     private void Update()
     {
-        if (enemySpawnpoints.All(es => es.waveComplete) && FindObjectsOfType<Enemy>().Count()==0)
+        if (enemySpawnpoints != null && enemySpawnpoints.All(es => es.waveComplete) && FindObjectsOfType<Enemy>().Count()==0)
         {
             currentWave++;
             waveStart.Invoke();
