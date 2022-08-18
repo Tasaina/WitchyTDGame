@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class WaveManager : MonoBehaviour
 {
+    public UnityEvent waveStart= new UnityEvent();
     private List<EnemySpawnpoint> enemySpawnpoints;
     [NonSerialized]
     public int maxWaves;
@@ -21,18 +23,18 @@ public class WaveManager : MonoBehaviour
 
     private void Update()
     {
-        if (enemySpawnpoints.All(es => es.enemiesLeftInWave == 0) && FindObjectsOfType<Enemy>().Count()==0)
+        if (enemySpawnpoints.All(es => es.waveComplete) && FindObjectsOfType<Enemy>().Count()==0)
         {
             currentWave++;
-            //TODO change to unityevent
-            enemySpawnpoints.ForEach(es => es.WaveStart());
+            waveStart.Invoke();
         }
     }
 
+
     private void LoadEnemySpawnpoints(Scene scene, LoadSceneMode mode)
     {
+        waveStart.Invoke();
         enemySpawnpoints = FindObjectsOfType<EnemySpawnpoint>().ToList();
-        enemySpawnpoints.ForEach(es => es.WaveStart());
         maxWaves = enemySpawnpoints.Select(es => es.waves).Max(ws=>ws.Max(w=>w.toWave));
     }
 }

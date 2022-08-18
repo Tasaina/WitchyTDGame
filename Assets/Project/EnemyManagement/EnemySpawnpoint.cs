@@ -11,6 +11,7 @@ public class EnemySpawnpoint : MonoBehaviour
     public List<WaveInformation> waves = new List<WaveInformation>();
     
     public int enemiesLeftInWave => currentWaveInformation.spawnsLeft;
+    public bool waveComplete => currentWaveInformation==null ? true : currentWaveInformation.spawnsLeft<=0;
 
     [NonSerialized]
     public int currentEnemy;
@@ -24,6 +25,10 @@ public class EnemySpawnpoint : MonoBehaviour
         waveManager = GameManager.Instance.WaveManager;
     }
 
+    private void Start()
+    {
+        waveManager.waveStart.AddListener(WaveStart);
+    }
     void Update()
     {
         if (!active) return;
