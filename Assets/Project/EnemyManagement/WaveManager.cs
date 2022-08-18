@@ -9,11 +9,12 @@ using UnityEngine.SceneManagement;
 public class WaveManager : MonoBehaviour
 {
     public UnityEvent waveStart= new UnityEvent();
-    private List<EnemySpawnpoint> enemySpawnpoints;
+    private List<EnemySpawnpoint> enemySpawnpoints = new List<EnemySpawnpoint>();
     [NonSerialized]
     public int maxWaves;
     [NonSerialized]
     public int currentWave;
+
 
     void Start()
     {
@@ -23,7 +24,7 @@ public class WaveManager : MonoBehaviour
 
     private void Update()
     {
-        if (enemySpawnpoints != null && enemySpawnpoints.All(es => es.waveComplete) && FindObjectsOfType<Enemy>().Count()==0)
+        if (enemySpawnpoints.Count>0 && enemySpawnpoints.All(es => es.waveComplete) && FindObjectsOfType<Enemy>().Count()==0)
         {
             currentWave++;
             waveStart.Invoke();
