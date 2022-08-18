@@ -18,7 +18,7 @@ public class WaveManager : MonoBehaviour
 
     void Start()
     {
-        currentWave = 1;
+        currentWave = 0;
         SceneManager.sceneLoaded += LoadEnemySpawnpoints;
     }
 
