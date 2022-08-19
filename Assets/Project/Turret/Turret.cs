@@ -5,13 +5,19 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
-    private float attackDelay;
+    public float FireRate => 1;
+    public int UpgradeCost => (int)(10+(baseUpgradeCost*level));
+
+    public float baseUpgradeCost;
+    public int level;
     public Bullet bulletPrefab;
     public float attackRange;
     public float baseAttackDelay;
     public float damage;
     public TurretRangeIndicator rangeIndicator;
     public List<Enemy> enemies = new List<Enemy>();
+    
+    private float attackDelay;
 
     void Start()
     {
@@ -40,10 +46,20 @@ public class Turret : MonoBehaviour
 
         enemies.Add(enemy);
     }
+
     private void RemoveTarget(Collider2D collider)
     {
         var enemy = collider.gameObject.GetComponent<Enemy>();
 
         enemies.Remove(enemy);
+    }
+
+    public void Upgrade()
+    {
+        level += 1;
+        damage = (int)(damage*1.1);
+        baseAttackDelay *= .9f;
+        attackRange = (int)(attackRange * 1.1);
+        rangeIndicator.transform.localScale *= 1.1f;
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3714575684931084716}
   - component: {fileID: 6950835491851411007}
   m_Layer: 5
-  m_Name: TurretRangeText
+  m_Name: RangeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 6373765981619094614}
   - component: {fileID: 7383648416704670907}
   m_Layer: 5
-  m_Name: Button
+  m_Name: UpgradeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -406,7 +406,7 @@ GameObject:
   - component: {fileID: 2072751115599597273}
   - component: {fileID: 7205109656988954270}
   m_Layer: 5
-  m_Name: TurretFireRateText
+  m_Name: FireRateText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -617,7 +617,7 @@ GameObject:
   - component: {fileID: 3429152513994930950}
   - component: {fileID: 1540360207279802458}
   m_Layer: 5
-  m_Name: TurretAttackText
+  m_Name: AttackText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -749,6 +749,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8915660587563355927}
+  - component: {fileID: 7554491411957412006}
   m_Layer: 0
   m_Name: TurretUI
   m_TagString: Untagged
@@ -772,6 +773,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7554491411957412006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3253387768726835499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad641817143c67c44b300c566dc2170f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turret: {fileID: 0}
 --- !u!1 &4821609503943515151
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,7 +798,7 @@ GameObject:
   - component: {fileID: 2640234143357209929}
   - component: {fileID: 2233481567986278438}
   m_Layer: 5
-  m_Name: TurretLevelText
+  m_Name: LevelText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -919,7 +933,7 @@ GameObject:
   - component: {fileID: 2315346817675079774}
   - component: {fileID: 8837385069392520929}
   m_Layer: 5
-  m_Name: TurretNameText
+  m_Name: NameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
