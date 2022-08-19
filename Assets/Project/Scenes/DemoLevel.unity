@@ -1739,6 +1739,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1101219994787733359, guid: 6821b2239a9b6fa4480884333915438e, type: 3}
+      propertyPath: m_text
+      value: '[ESSENCE]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101219994787733359, guid: 6821b2239a9b6fa4480884333915438e, type: 3}
+      propertyPath: m_margin.x
+      value: -521.98584
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101219994787733359, guid: 6821b2239a9b6fa4480884333915438e, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3451238909122461691, guid: 6821b2239a9b6fa4480884333915438e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1838,6 +1850,14 @@ PrefabInstance:
     - target: {fileID: 8449505559453192614, guid: 6821b2239a9b6fa4480884333915438e, type: 3}
       propertyPath: m_Name
       value: SpawnTowerButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 8639198594288349519, guid: 6821b2239a9b6fa4480884333915438e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 843
+      objectReference: {fileID: 0}
+    - target: {fileID: 8639198594288349519, guid: 6821b2239a9b6fa4480884333915438e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 494
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6821b2239a9b6fa4480884333915438e, type: 3}

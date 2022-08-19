@@ -23,7 +23,7 @@ public class Turret : MonoBehaviour
     private void Update()
     {
         attackDelay -= Time.deltaTime;
-        if (attackDelay > 0)  return; 
+        if (attackDelay > 0) return;
             
         if (enemies.Count != 0)
         {
