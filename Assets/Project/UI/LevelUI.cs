@@ -16,18 +16,21 @@ public class LevelUI : MonoBehaviour
         GetComponentInChildren<Button>().onClick.AddListener(SpawnTowerClicked);
         essenceText = GetComponentsInChildren<TextMeshProUGUI>().First(t=>t.name=="EssenceText");
         waveText = GetComponentsInChildren<TextMeshProUGUI>().First(t => t.name == "WaveText");
-        
+        UpdateWaveText();
+        GameManager.Instance.WaveManager.waveStart.AddListener(UpdateWaveText);
     }
+
     private void Update()
     {
         essenceText.text = $"Essence: {GameManager.Instance.LevelManager.essence}";
-        UpdateWave();//use WaveChange within WaveManager instead of this Update?
     }
-    private void UpdateWave()
+
+    private void UpdateWaveText()
     {
         var waveManager = GameManager.Instance.WaveManager;
         waveText.text = $"Wave {waveManager.currentWave} / {waveManager.maxWaves}";
     }
+
     private void SpawnTowerClicked()
     {
         GameManager.Instance.TurretManager.SpawnPlaceholder(turretToSpawn);

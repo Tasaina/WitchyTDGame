@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5785705515867815702}
   - component: {fileID: 6908528566259068295}
   - component: {fileID: 278927247892718336}
+  - component: {fileID: -8901917539192022469}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -60,6 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f0fd97c033a7714a95f1d221a921df1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  essence: 0
   maxHealth: 0
 --- !u!114 &5785705515867815702
 MonoBehaviour:
@@ -73,6 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156934f0514c08647aeaf8bbfa67b426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  candy: 0
 --- !u!114 &6908528566259068295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,6 +88,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774c37ed0d1e37146886e8faa61b9a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waveStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &278927247892718336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,3 +104,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turretPlaceholderPrefab: {fileID: -4864512170482492473, guid: c983d6f7cae9c6742aa89f2369b6021c, type: 3}
+--- !u!114 &-8901917539192022469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6828376758962526861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce656bc855bd724478261db01c1ac94d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretUIPrefab: {fileID: 7554491411957412006, guid: 108dfcc3ef96570449b1f7e935573e12, type: 3}
+  currentTurretUI: {fileID: 0}

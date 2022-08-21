@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public LevelManager LevelManager { get; private set; }
     public WaveManager WaveManager { get; private set; }
     public TurretManager TurretManager { get; private set; }
+    public UIManager UIManager { get; private set; }
 
     void Awake()
     {
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
         LevelManager = GetComponent<LevelManager>();
         WaveManager = GetComponent<WaveManager>();
         TurretManager = GetComponent<TurretManager>();
+        UIManager = GetComponent<UIManager>();
         DontDestroyOnLoad(gameObject);
     }
 }

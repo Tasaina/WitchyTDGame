@@ -62,4 +62,9 @@ public class Turret : MonoBehaviour
         attackRange = (int)(attackRange * 1.1);
         rangeIndicator.transform.localScale *= 1.1f;
     }
+
+    private void OnMouseDown()
+    {
+        GameManager.Instance.UIManager.CreateTurretUI(this);
+    }
 }
