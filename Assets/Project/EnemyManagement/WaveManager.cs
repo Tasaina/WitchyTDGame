@@ -26,6 +26,7 @@ public class WaveManager : MonoBehaviour
         if (enemySpawnpoints.Count>0 && enemySpawnpoints.All(es => es.waveComplete) && FindObjectsOfType<Enemy>().Count()==0)
         {
             currentWave++;
+            if (currentWave > maxWaves) currentWave = maxWaves;
             waveStart.Invoke();
         }
     }

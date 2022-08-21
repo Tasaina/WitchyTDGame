@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,11 @@ public class TurretRangeIndicator : MonoBehaviour
     public UnityEvent<Collider2D> Enter;
     public UnityEvent<Collider2D> Stay;
     public UnityEvent<Collider2D> Exit;
+
+    private void Start()
+    {
+        ToggleVisibility();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,5 +28,10 @@ public class TurretRangeIndicator : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         Exit.Invoke(collision);
+    }
+
+    public void ToggleVisibility()
+    {
+        GetComponent<Renderer>().enabled = !GetComponent<Renderer>().enabled;
     }
 }

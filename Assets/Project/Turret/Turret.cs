@@ -57,14 +57,9 @@ public class Turret : MonoBehaviour
     public void Upgrade()
     {
         level += 1;
-        damage = (int)(damage*1.1);
+        damage = (int)(damage * 1.1);
         baseAttackDelay *= .9f;
         attackRange = (int)(attackRange * 1.1);
         rangeIndicator.transform.localScale *= 1.1f;
-    }
-
-    private void OnMouseDown()
-    {
-        GameManager.Instance.UIManager.CreateTurretUI(this);
     }
 }

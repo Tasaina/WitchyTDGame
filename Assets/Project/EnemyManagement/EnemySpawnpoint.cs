@@ -29,6 +29,7 @@ public class EnemySpawnpoint : MonoBehaviour
     {
         waveManager.waveStart.AddListener(WaveStart);
     }
+
     void Update()
     {
         if (!active) return;

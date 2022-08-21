@@ -43,7 +43,7 @@ public class TurretUI : MonoBehaviour
     private void UpdateTexts()
     {
         nameText.text = Turret.name;
-        levelText.text = $"Level {Turret.level}";
+        levelText.text = $"Level {Turret.level+1}";
         attackText.text = $"Damage {Turret.damage}";
         fireRateText.text = $"Firerate {Turret.FireRate}";
         rangeText.text = $"Range {Turret.attackRange}";
