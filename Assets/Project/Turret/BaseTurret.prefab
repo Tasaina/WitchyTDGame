@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 173472712f261774c9417c77b33bdcbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseUpgradeCost: 0
+  baseUpgradeCost: 10
   level: 0
   bulletPrefab: {fileID: -405818534539242319, guid: 2257e723398d5694eb05f74bd07ff850, type: 3}
   attackRange: 1

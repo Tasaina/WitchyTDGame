@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+
 public class Turret : MonoBehaviour
 {
     public float FireRate => 1;
@@ -18,9 +21,11 @@ public class Turret : MonoBehaviour
     public List<Enemy> enemies = new List<Enemy>();
     
     private float attackDelay;
+    private UIManager uiManager;
 
     void Start()
     {
+        uiManager = GameManager.Instance.UIManager;
         rangeIndicator.transform.localScale *= attackRange;
         rangeIndicator.Enter.AddListener(AddTarget); 
         rangeIndicator.Exit.AddListener(RemoveTarget);
@@ -65,8 +70,6 @@ public class Turret : MonoBehaviour
 
     private void OnMouseDown()
     {
-        FindObjectsOfType<Turret>().ToList().ForEach(t => t.rangeIndicator.Hide());
-        GameManager.Instance.UIManager.CreateTurretUI(this);
-        rangeIndicator.Show();
+        uiManager.ShowTurretUI(this);
     }
 }

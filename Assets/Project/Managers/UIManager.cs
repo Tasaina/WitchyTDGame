@@ -20,9 +20,16 @@ public class UIManager : MonoBehaviour
         currentTurretUI.gameObject.SetActive(false);
     }
 
-    public void CreateTurretUI(Turret turret)
+    public void ShowTurretUI(Turret turret)
     {
+        if (currentTurretUI.Turret != null) currentTurretUI.Turret.rangeIndicator.Hide();
+        turret.rangeIndicator.Show();
         currentTurretUI.gameObject.SetActive(true);
         currentTurretUI.Setup(turret);
+    }
+    public void HideTurretUI()
+    {
+        currentTurretUI.gameObject.SetActive(false);
+        currentTurretUI.Turret.rangeIndicator.Hide();
     }
 }
