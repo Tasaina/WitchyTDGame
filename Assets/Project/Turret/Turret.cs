@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 public class Turret : MonoBehaviour
 {
     public float FireRate => 1;
@@ -61,5 +61,12 @@ public class Turret : MonoBehaviour
         baseAttackDelay *= .9f;
         attackRange = (int)(attackRange * 1.1);
         rangeIndicator.transform.localScale *= 1.1f;
+    }
+
+    private void OnMouseDown()
+    {
+        FindObjectsOfType<Turret>().ToList().ForEach(t => t.rangeIndicator.Hide());
+        GameManager.Instance.UIManager.CreateTurretUI(this);
+        rangeIndicator.Show();
     }
 }

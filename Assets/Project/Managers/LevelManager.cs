@@ -30,6 +30,4 @@ public class LevelManager : MonoBehaviour
     {
         essence += essenceGain;
     }
-
-    MouseDown => Get nearest turret to click location and toggle active
 }

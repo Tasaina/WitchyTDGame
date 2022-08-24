@@ -34,4 +34,14 @@ public class TurretRangeIndicator : MonoBehaviour
     {
         GetComponent<Renderer>().enabled = !GetComponent<Renderer>().enabled;
     }
+
+    public void Hide()
+    {
+        GetComponent<Renderer>().enabled = false;
+    }
+
+    public void Show()
+    {
+        GetComponent<Renderer>().enabled = true;
+    }
 }
