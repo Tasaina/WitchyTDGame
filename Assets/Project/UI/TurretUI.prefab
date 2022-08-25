@@ -785,7 +785,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad641817143c67c44b300c566dc2170f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turret: {fileID: 0}
 --- !u!1 &4821609503943515151
 GameObject:
   m_ObjectHideFlags: 0
@@ -1277,8 +1276,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -662.50146, y: -367.9408}
-  m_SizeDelta: {x: -1325.003, y: -735.8817}
+  m_AnchoredPosition: {x: -650.02246, y: -346.33075}
+  m_SizeDelta: {x: -1349.9612, y: -740.1428}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4461018323711474384
 CanvasRenderer:

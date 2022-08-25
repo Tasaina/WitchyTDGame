@@ -11,6 +11,8 @@ public class Turret : MonoBehaviour
     public float FireRate => 1/baseAttackDelay;
     public int UpgradeCost => (int)(10+(baseUpgradeCost*level));
 
+    public Sprite shopIcon;
+    public int purchaseCost;
     public float baseUpgradeCost;
     public int level;
     public Bullet bulletPrefab;
