@@ -12,7 +12,7 @@ public class TurretRangeIndicator : MonoBehaviour
 
     private void Start()
     {
-        ToggleVisibility();
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

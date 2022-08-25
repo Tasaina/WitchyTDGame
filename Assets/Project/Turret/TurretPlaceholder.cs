@@ -10,7 +10,12 @@ public class TurretPlaceholder : MonoBehaviour
     {
         turret = turretToPlacehold;
         GetComponent<SpriteRenderer>().sprite = turret.GetComponent<SpriteRenderer>().sprite;
+
+        var rangeIndicator = GetComponentInChildren<TurretRangeIndicator>();
+        rangeIndicator.transform.localScale *= turretToPlacehold.attackRange;
+        rangeIndicator.Show();
     }
+
     private void Update()
     {
         var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);

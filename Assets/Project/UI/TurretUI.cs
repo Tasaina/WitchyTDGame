@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,8 +46,8 @@ public class TurretUI : MonoBehaviour
         nameText.text = Turret.name;
         levelText.text = $"Level {Turret.level+1}";
         attackText.text = $"Damage {Turret.damage}";
-        fireRateText.text = $"Firerate {Turret.FireRate}";
-        rangeText.text = $"Range {Turret.attackRange}";
+        fireRateText.text = $"Firerate {Math.Round(Turret.FireRate, 2)}";
+        rangeText.text = $"Range {Math.Round(Turret.attackRange, 2)}";
         upgradeCostText.text = $"{Turret.UpgradeCost}";
     }
 

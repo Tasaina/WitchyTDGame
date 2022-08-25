@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 
 public class Turret : MonoBehaviour
 {
-    public float FireRate => 1;
+    public float FireRate => 1/baseAttackDelay;
     public int UpgradeCost => (int)(10+(baseUpgradeCost*level));
 
     public float baseUpgradeCost;
@@ -29,6 +29,7 @@ public class Turret : MonoBehaviour
         rangeIndicator.transform.localScale *= attackRange;
         rangeIndicator.Enter.AddListener(AddTarget); 
         rangeIndicator.Exit.AddListener(RemoveTarget);
+        rangeIndicator.Hide();
     }
 
     private void Update()
@@ -62,9 +63,9 @@ public class Turret : MonoBehaviour
     public void Upgrade()
     {
         level += 1;
-        damage = (int)(damage * 1.1);
+        damage = (int)(damage+1 * 1.1);
         baseAttackDelay *= .9f;
-        attackRange = (int)(attackRange * 1.1);
+        attackRange = attackRange * 1.1f;
         rangeIndicator.transform.localScale *= 1.1f;
     }
 
