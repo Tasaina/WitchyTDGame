@@ -9,12 +9,17 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
+    public List<Turret> AvailableTurrets => availableTurrets.ToList();
+
     public int essence;
+    [SerializeField]
+    private List<Turret> availableTurrets = new List<Turret>();
     private int currentHealth;
     private UIManager uiManager;
 
     [SerializeField]
     private int maxHealth;
+
     void Start()
     {
         uiManager = GameManager.Instance.UIManager;

@@ -242,6 +242,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3427231790970895033, guid: 1a4e363ee68982c41b49d7dc20521d2a, type: 3}
+      propertyPath: availableTurrets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3427231790970895033, guid: 1a4e363ee68982c41b49d7dc20521d2a, type: 3}
+      propertyPath: availableTurrets.Array.data[0]
+      value: 
+      objectReference: {fileID: 7307800334806292445, guid: 6765cccea1fc49148aa701d80392c1b7, type: 3}
+    - target: {fileID: 3427231790970895033, guid: 1a4e363ee68982c41b49d7dc20521d2a, type: 3}
+      propertyPath: availableTurrets.Array.data[1]
+      value: 
+      objectReference: {fileID: 8220277492500825476, guid: b170d65061ee51b418fa9de5d81c95e2, type: 3}
     - target: {fileID: 6828376758962526861, guid: 1a4e363ee68982c41b49d7dc20521d2a, type: 3}
       propertyPath: m_Name
       value: GameManager
