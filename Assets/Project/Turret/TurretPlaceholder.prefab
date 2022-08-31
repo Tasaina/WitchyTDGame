@@ -47,6 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turret: {fileID: 0}
+  minTurretHeight: -5
+  maxTurretHeight: 7.5
+  blockedRadius: 0.6
 --- !u!212 &-8827389466566856368
 SpriteRenderer:
   m_ObjectHideFlags: 0

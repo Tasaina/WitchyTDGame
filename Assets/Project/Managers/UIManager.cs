@@ -29,6 +29,7 @@ public class UIManager : MonoBehaviour
     }
     public void HideTurretUI()
     {
+        if (currentTurretUI != null) return;
         currentTurretUI.gameObject.SetActive(false);
         currentTurretUI.Turret.rangeIndicator.Hide();
     }

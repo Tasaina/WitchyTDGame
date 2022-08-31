@@ -20,6 +20,7 @@ public class TurretManager : MonoBehaviour
         var turret = Instantiate(currentPlaceholder.turret);
         turret.transform.position = currentPlaceholder.transform.position;
         DropPlaceholder();
+        GameManager.Instance.LevelManager.essence -= turret.purchaseCost;
     }
 
     public void DropPlaceholder()

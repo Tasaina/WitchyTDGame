@@ -25,6 +25,7 @@ public class LevelUI : MonoBehaviour
             Button turretButton = Instantiate(turretButtonPrefab,turretButtonPanel.transform);
             turretButton.GetComponentsInChildren<TextMeshProUGUI>()[0].text = turret.name;
             turretButton.GetComponentsInChildren<TextMeshProUGUI>()[1].text = turret.purchaseCost.ToString();
+            turretButton.onClick.AddListener(delegate { SpawnTurretPlaceholder(turret); });
         }
 
         essenceText = GetComponentsInChildren<TextMeshProUGUI>().First(t=>t.name=="EssenceText");
@@ -42,5 +43,11 @@ public class LevelUI : MonoBehaviour
     {
         var waveManager = GameManager.Instance.WaveManager;
         waveText.text = $"Wave {waveManager.currentWave} / {waveManager.maxWaves}";
+    }
+
+    private void SpawnTurretPlaceholder(Turret turretPrefab)
+    {
+        if (levelManager.essence < turretPrefab.purchaseCost) return;
+        GameManager.Instance.TurretManager.SpawnPlaceholder(turretPrefab);
     }
 }
