@@ -258,6 +258,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6908528566259068295, guid: 1a4e363ee68982c41b49d7dc20521d2a, type: 3}
+      propertyPath: nextWaveUI
+      value: 
+      objectReference: {fileID: 1009281265453478582, guid: 36d98deb162a6694b8c529a5604f782f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a4e363ee68982c41b49d7dc20521d2a, type: 3}
 --- !u!1 &1692242934
