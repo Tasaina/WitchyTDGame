@@ -62,6 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   essence: 150
+  availableTurrets: []
   maxHealth: 0
 --- !u!114 &5785705515867815702
 MonoBehaviour:
@@ -91,6 +92,8 @@ MonoBehaviour:
   waveStart:
     m_PersistentCalls:
       m_Calls: []
+  baseWaveTimer: 5
+  nextWaveUI: {fileID: 0}
 --- !u!114 &278927247892718336
 MonoBehaviour:
   m_ObjectHideFlags: 0

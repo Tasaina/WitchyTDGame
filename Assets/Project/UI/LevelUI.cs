@@ -27,12 +27,12 @@ public class LevelUI : MonoBehaviour
             turretButton.GetComponentsInChildren<TextMeshProUGUI>()[1].text = turret.purchaseCost.ToString();
             turretButton.onClick.AddListener(delegate { SpawnTurretPlaceholder(turret); });
         }
-
         essenceText = GetComponentsInChildren<TextMeshProUGUI>().First(t=>t.name=="EssenceText");
         waveText = GetComponentsInChildren<TextMeshProUGUI>().First(t => t.name == "WaveText");
         UpdateWaveText();
         GameManager.Instance.WaveManager.waveStart.AddListener(UpdateWaveText);
     }
+
 
     private void Update()
     {
