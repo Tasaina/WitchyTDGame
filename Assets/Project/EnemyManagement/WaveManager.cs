@@ -8,22 +8,26 @@ using UnityEngine.SceneManagement;
 
 public class WaveManager : MonoBehaviour
 {
+    public float WaveTimer => waveTimer;
+
     public UnityEvent waveStart = new UnityEvent();
     private List<EnemySpawnpoint> enemySpawnpoints = new List<EnemySpawnpoint>();
     [NonSerialized]
     public int maxWaves;
     [NonSerialized]
     public int currentWave;
-    [NonSerialized]
-    public float waveTimer;
     public float baseWaveTimer;
     private NextWaveUI nextWaveUI;
+    private float waveTimer;
 
     void Start()
     {
-        currentWave = 0;
-        waveTimer = baseWaveTimer;
-        SceneManager.sceneLoaded += LoadEnemySpawnpoints;
+        SceneManager.sceneLoaded += LevelStart;
+    }
+
+    public void StartWave()
+    {
+        waveTimer = 0;
     }
 
     private void Update()
@@ -42,11 +46,15 @@ public class WaveManager : MonoBehaviour
         }
     }
 
-    private void LoadEnemySpawnpoints(Scene scene, LoadSceneMode mode)
+    private void LevelStart(Scene scene, LoadSceneMode mode)
     {
-        waveStart.Invoke();
         nextWaveUI = FindObjectOfType<NextWaveUI>();
         enemySpawnpoints = FindObjectsOfType<EnemySpawnpoint>().ToList();
-        maxWaves = enemySpawnpoints.Select(es => es.waves).Max(ws=>ws.Max(w=>w.toWave));
+
+        maxWaves = enemySpawnpoints.Select(es => es.waves).Max(ws => ws.Max(w => w.toWave));
+
+        currentWave = 0;
+        waveTimer = baseWaveTimer;
+        waveStart.Invoke();
     }
 }
