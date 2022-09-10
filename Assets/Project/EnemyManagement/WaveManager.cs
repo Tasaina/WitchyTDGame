@@ -39,7 +39,7 @@ public class WaveManager : MonoBehaviour
             waveTimer -= Time.deltaTime;
             if (waveTimer > 0) return; 
             currentWave++;
-            if (currentWave > maxWaves) currentWave = maxWaves;
+            if (currentWave > maxWaves) GameManager.Instance.RunManager.GoToHub();
             nextWaveUI.gameObject.SetActive(false);
             waveTimer = baseWaveTimer;
             waveStart.Invoke();

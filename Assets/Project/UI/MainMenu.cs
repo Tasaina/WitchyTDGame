@@ -27,7 +27,7 @@ public class MainMenu : MonoBehaviour
     }
     private void NewGame()
     {
-        SceneManager.LoadScene("DemoLevel");
+        SceneManager.LoadScene("HubScene");
     }
 
     private void OpenSettings()

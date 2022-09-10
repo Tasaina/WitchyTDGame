@@ -36,7 +36,7 @@ public class LevelManager : MonoBehaviour
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
-            SceneManager.LoadScene("MainMenuScene");
+            GameManager.Instance.RunManager.GoToHub();
         }
     }
 
