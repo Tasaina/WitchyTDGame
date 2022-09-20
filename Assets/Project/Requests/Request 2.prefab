@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4295262898860268237
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1405721207978153978, guid: d1907448f2a7a714abc458a6e6ee4a69, type: 3}
+      propertyPath: title
+      value: Demo Request Lvl2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1405721207978153978, guid: d1907448f2a7a714abc458a6e6ee4a69, type: 3}
+      propertyPath: reward
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1405721207978153978, guid: d1907448f2a7a714abc458a6e6ee4a69, type: 3}
+      propertyPath: requestee
+      value: indeen
+      objectReference: {fileID: 0}
+    - target: {fileID: 1405721207978153978, guid: d1907448f2a7a714abc458a6e6ee4a69, type: 3}
+      propertyPath: difficulty
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1405721207978153978, guid: d1907448f2a7a714abc458a6e6ee4a69, type: 3}
+      propertyPath: description
+      value: u r 2 beatiful I am drauning
+      objectReference: {fileID: 0}
+    - target: {fileID: 1405721207978153978, guid: d1907448f2a7a714abc458a6e6ee4a69, type: 3}
+      propertyPath: displayTitle
+      value: Test Lvl2 I am unda da water
+      objectReference: {fileID: 0}
+    - target: {fileID: 1405721207978153978, guid: d1907448f2a7a714abc458a6e6ee4a69, type: 3}
+      propertyPath: levels.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1405721207978153978, guid: d1907448f2a7a714abc458a6e6ee4a69, type: 3}
+      propertyPath: levels.Array.data[0]
+      value: 
+      objectReference: {fileID: 7203897445004022354, guid: 694e44241f56b1641967c73112019d20, type: 3}
+    - target: {fileID: 2348738627549002172, guid: d1907448f2a7a714abc458a6e6ee4a69, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348738627549002172, guid: d1907448f2a7a714abc458a6e6ee4a69, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348738627549002172, guid: d1907448f2a7a714abc458a6e6ee4a69, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348738627549002172, guid: d1907448f2a7a714abc458a6e6ee4a69, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348738627549002172, guid: d1907448f2a7a714abc458a6e6ee4a69, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348738627549002172, guid: d1907448f2a7a714abc458a6e6ee4a69, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348738627549002172, guid: d1907448f2a7a714abc458a6e6ee4a69, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348738627549002172, guid: d1907448f2a7a714abc458a6e6ee4a69, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348738627549002172, guid: d1907448f2a7a714abc458a6e6ee4a69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348738627549002172, guid: d1907448f2a7a714abc458a6e6ee4a69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348738627549002172, guid: d1907448f2a7a714abc458a6e6ee4a69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7221142751251494051, guid: d1907448f2a7a714abc458a6e6ee4a69, type: 3}
+      propertyPath: m_Name
+      value: Request 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d1907448f2a7a714abc458a6e6ee4a69, type: 3}

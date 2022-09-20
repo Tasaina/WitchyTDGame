@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get { return _instance; } }
     private static GameManager _instance;
 
+    public List<Request> requests = new List<Request>();
     public RunManager RunManager { get; private set; }
     public LevelManager LevelManager { get; private set; }
     public WaveManager WaveManager { get; private set; }
